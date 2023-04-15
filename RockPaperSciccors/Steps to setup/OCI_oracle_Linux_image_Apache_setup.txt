@@ -1,0 +1,19 @@
+To run Apache2 web server in OCI oracle linux image
+
+while creating compute instance:
+
+1. create public and private key using PuttyKeyGen.
+2. copy paste publicKey while creating instance
+3. save the private Key for furthre usage to SSH.
+
+Apache Server setUp:
+
+1. sudo yum install httpd -y
+2. sudo apachectl start
+3. sudo systemctl enable httpd
+4. sudo apachectl configtest
+5. sudo firewall-cmd --permanent --zone=public --add-service=http
+6. sudo firewall-cmd --reload
+7. sudo chown -R opc html/
+8. sudo chmod 777 html/
+
